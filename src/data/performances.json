@@ -1,0 +1,74 @@
+[
+  {
+    "teamId": "canada",
+    "lastMatches": ["W", "D", "L", "W", "D"],
+    "goalsFor": 7,
+    "goalsAgainst": 5,
+    "wins": 2,
+    "draws": 2,
+    "losses": 1
+  },
+  {
+    "teamId": "bosnia",
+    "lastMatches": ["D", "W", "D", "L", "W"],
+    "goalsFor": 6,
+    "goalsAgainst": 4,
+    "wins": 2,
+    "draws": 2,
+    "losses": 1
+  },
+  {
+    "teamId": "france",
+    "lastMatches": ["W", "W", "D", "W", "L"],
+    "goalsFor": 10,
+    "goalsAgainst": 4,
+    "wins": 3,
+    "draws": 1,
+    "losses": 1
+  },
+  {
+    "teamId": "japan",
+    "lastMatches": ["W", "D", "W", "W", "D"],
+    "goalsFor": 11,
+    "goalsAgainst": 5,
+    "wins": 3,
+    "draws": 2,
+    "losses": 0
+  },
+  {
+    "teamId": "brazil",
+    "lastMatches": ["W", "W", "L", "D", "W"],
+    "goalsFor": 9,
+    "goalsAgainst": 5,
+    "wins": 3,
+    "draws": 1,
+    "losses": 1
+  },
+  {
+    "teamId": "morocco",
+    "lastMatches": ["D", "W", "W", "D", "L"],
+    "goalsFor": 8,
+    "goalsAgainst": 4,
+    "wins": 2,
+    "draws": 2,
+    "losses": 1
+  },
+  {
+    "teamId": "argentina",
+    "lastMatches": ["W", "W", "W", "D", "W"],
+    "goalsFor": 12,
+    "goalsAgainst": 3,
+    "wins": 4,
+    "draws": 1,
+    "losses": 0
+  },
+  {
+    "teamId": "usa",
+    "lastMatches": ["W", "L", "W", "D", "W"],
+    "goalsFor": 8,
+    "goalsAgainst": 6,
+    "wins": 3,
+    "draws": 1,
+    "losses": 1
+  }
+]

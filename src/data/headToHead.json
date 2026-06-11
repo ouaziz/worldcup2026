@@ -1,0 +1,62 @@
+[
+  {
+    "teamAId": "canada",
+    "teamBId": "bosnia",
+    "matchesPlayed": 3,
+    "teamAWins": 1,
+    "teamBWins": 1,
+    "draws": 1,
+    "goalsA": 4,
+    "goalsB": 4
+  },
+  {
+    "teamAId": "france",
+    "teamBId": "japan",
+    "matchesPlayed": 5,
+    "teamAWins": 3,
+    "teamBWins": 1,
+    "draws": 1,
+    "goalsA": 9,
+    "goalsB": 5
+  },
+  {
+    "teamAId": "brazil",
+    "teamBId": "morocco",
+    "matchesPlayed": 4,
+    "teamAWins": 2,
+    "teamBWins": 1,
+    "draws": 1,
+    "goalsA": 7,
+    "goalsB": 5
+  },
+  {
+    "teamAId": "argentina",
+    "teamBId": "usa",
+    "matchesPlayed": 7,
+    "teamAWins": 5,
+    "teamBWins": 1,
+    "draws": 1,
+    "goalsA": 14,
+    "goalsB": 6
+  },
+  {
+    "teamAId": "canada",
+    "teamBId": "japan",
+    "matchesPlayed": 4,
+    "teamAWins": 1,
+    "teamBWins": 2,
+    "draws": 1,
+    "goalsA": 5,
+    "goalsB": 7
+  },
+  {
+    "teamAId": "france",
+    "teamBId": "morocco",
+    "matchesPlayed": 6,
+    "teamAWins": 4,
+    "teamBWins": 1,
+    "draws": 1,
+    "goalsA": 12,
+    "goalsB": 7
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "canada",
+    "name": "Canada",
+    "countryCode": "CA",
+    "fifaRanking": 31,
+    "group": "A",
+    "flagUrl": "https://flagcdn.com/ca.svg"
+  },
+  {
+    "id": "bosnia",
+    "name": "Bosnie-Herzégovine",
+    "countryCode": "BA",
+    "fifaRanking": 69,
+    "group": "A",
+    "flagUrl": "https://flagcdn.com/ba.svg"
+  },
+  {
+    "id": "france",
+    "name": "France",
+    "countryCode": "FR",
+    "fifaRanking": 2,
+    "group": "B",
+    "flagUrl": "https://flagcdn.com/fr.svg"
+  },
+  {
+    "id": "japan",
+    "name": "Japon",
+    "countryCode": "JP",
+    "fifaRanking": 18,
+    "group": "B",
+    "flagUrl": "https://flagcdn.com/jp.svg"
+  },
+  {
+    "id": "brazil",
+    "name": "Brésil",
+    "countryCode": "BR",
+    "fifaRanking": 5,
+    "group": "C",
+    "flagUrl": "https://flagcdn.com/br.svg"
+  },
+  {
+    "id": "morocco",
+    "name": "Maroc",
+    "countryCode": "MA",
+    "fifaRanking": 12,
+    "group": "C",
+    "flagUrl": "https://flagcdn.com/ma.svg"
+  },
+  {
+    "id": "argentina",
+    "name": "Argentine",
+    "countryCode": "AR",
+    "fifaRanking": 1,
+    "group": "D",
+    "flagUrl": "https://flagcdn.com/ar.svg"
+  },
+  {
+    "id": "usa",
+    "name": "États-Unis",
+    "countryCode": "US",
+    "fifaRanking": 13,
+    "group": "D",
+    "flagUrl": "https://flagcdn.com/us.svg"
+  }
+]

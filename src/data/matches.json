@@ -1,0 +1,68 @@
+[
+  {
+    "id": "match-canada-bosnia",
+    "date": "2026-06-13T20:00:00-04:00",
+    "teamAId": "canada",
+    "teamBId": "bosnia",
+    "stadium": "BMO Field, Toronto",
+    "group": "A",
+    "status": "scheduled",
+    "importance": 0.72,
+    "homeAdvantageTeamId": "canada"
+  },
+  {
+    "id": "match-france-japan",
+    "date": "2026-06-14T18:00:00-04:00",
+    "teamAId": "france",
+    "teamBId": "japan",
+    "stadium": "MetLife Stadium, New Jersey",
+    "group": "B",
+    "status": "scheduled",
+    "importance": 0.78,
+    "homeAdvantageTeamId": null
+  },
+  {
+    "id": "match-brazil-morocco",
+    "date": "2026-06-15T21:00:00-04:00",
+    "teamAId": "brazil",
+    "teamBId": "morocco",
+    "stadium": "SoFi Stadium, Los Angeles",
+    "group": "C",
+    "status": "scheduled",
+    "importance": 0.86,
+    "homeAdvantageTeamId": null
+  },
+  {
+    "id": "match-argentina-usa",
+    "date": "2026-06-16T20:30:00-04:00",
+    "teamAId": "argentina",
+    "teamBId": "usa",
+    "stadium": "AT&T Stadium, Dallas",
+    "group": "D",
+    "status": "scheduled",
+    "importance": 0.88,
+    "homeAdvantageTeamId": "usa"
+  },
+  {
+    "id": "match-canada-japan",
+    "date": "2026-06-19T17:00:00-04:00",
+    "teamAId": "canada",
+    "teamBId": "japan",
+    "stadium": "BC Place, Vancouver",
+    "group": "A",
+    "status": "scheduled",
+    "importance": 0.8,
+    "homeAdvantageTeamId": "canada"
+  },
+  {
+    "id": "match-france-morocco",
+    "date": "2026-06-20T19:00:00-04:00",
+    "teamAId": "france",
+    "teamBId": "morocco",
+    "stadium": "Mercedes-Benz Stadium, Atlanta",
+    "group": "B",
+    "status": "scheduled",
+    "importance": 0.9,
+    "homeAdvantageTeamId": null
+  }
+]
