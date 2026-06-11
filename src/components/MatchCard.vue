@@ -21,6 +21,17 @@ const dateLabel = computed(() =>
     timeStyle: 'short',
   }).format(new Date(props.match.date)),
 )
+
+const statusLabel = computed(() => {
+  if (props.match.status === 'completed') return 'Terminé'
+  if (props.match.status === 'live') return 'En direct'
+  return 'À venir'
+})
+
+const resultLabel = computed(() => {
+  if (!props.match.result) return null
+  return `${props.match.result.teamAScore}-${props.match.result.teamBScore}`
+})
 </script>
 
 <template>
@@ -30,8 +41,15 @@ const dateLabel = computed(() =>
         <p class="text-sm font-medium text-emerald-700">Groupe {{ match.group }}</p>
         <p class="text-sm text-slate-500">{{ dateLabel }}</p>
       </div>
-      <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
-        {{ match.status }}
+      <span
+        class="rounded-full px-3 py-1 text-xs font-semibold"
+        :class="{
+          'bg-emerald-100 text-emerald-700': match.status === 'completed',
+          'bg-rose-100 text-rose-700': match.status === 'live',
+          'bg-slate-100 text-slate-600': match.status === 'scheduled',
+        }"
+      >
+        {{ statusLabel }}
       </span>
     </div>
 
@@ -50,6 +68,13 @@ const dateLabel = computed(() =>
     </div>
 
     <p class="mt-4 text-sm text-slate-500">{{ match.stadium }}</p>
+
+    <div v-if="resultLabel" class="mt-4 rounded-md border border-emerald-200 bg-emerald-50 p-3">
+      <p class="text-xs font-semibold uppercase tracking-wide text-emerald-700">Résultat actuel</p>
+      <p class="mt-1 text-xl font-bold text-emerald-950">
+        {{ teamA.name }} {{ resultLabel }} {{ teamB.name }}
+      </p>
+    </div>
 
     <div v-if="prediction" class="mt-5 space-y-4">
       <div class="flex flex-wrap gap-2">

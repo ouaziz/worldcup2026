@@ -23,6 +23,12 @@ const dateLabel = computed(() => {
     timeStyle: 'short',
   }).format(new Date(context.value.match.date))
 })
+
+const statusLabel = computed(() => {
+  if (context.value?.match.status === 'completed') return 'Terminé'
+  if (context.value?.match.status === 'live') return 'En direct'
+  return 'À venir'
+})
 </script>
 
 <template>
@@ -51,6 +57,26 @@ const dateLabel = computed(() => {
           <div>
             <p class="text-sm text-slate-500">Importance du match</p>
             <p class="font-semibold">{{ Math.round(context.match.importance * 100) }}%</p>
+          </div>
+        </div>
+      </section>
+
+      <section v-if="context.match.result" class="card border-emerald-200 bg-emerald-50 p-5">
+        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+              Résultat actuel
+            </p>
+            <p class="mt-1 text-3xl font-bold text-emerald-950">
+              {{ context.teamA.name }} {{ context.match.result.teamAScore }}-{{
+                context.match.result.teamBScore
+              }}
+              {{ context.teamB.name }}
+            </p>
+          </div>
+          <div class="rounded-md bg-white/70 px-4 py-3 text-sm text-emerald-900">
+            <p class="font-semibold">{{ statusLabel }}</p>
+            <p>Source : {{ context.match.result.source }}</p>
           </div>
         </div>
       </section>
