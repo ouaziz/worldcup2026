@@ -1,7 +1,73 @@
 [
   {
+    "teamId": "mexico",
+    "lastMatches": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "L"
+    ],
+    "goalsFor": 10,
+    "goalsAgainst": 5,
+    "wins": 3,
+    "draws": 1,
+    "losses": 1
+  },
+  {
+    "teamId": "south-africa",
+    "lastMatches": [
+      "D",
+      "L",
+      "W",
+      "L",
+      "D"
+    ],
+    "goalsFor": 5,
+    "goalsAgainst": 8,
+    "wins": 1,
+    "draws": 2,
+    "losses": 2
+  },
+  {
+    "teamId": "south-korea",
+    "lastMatches": [
+      "D",
+      "W",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 8,
+    "goalsAgainst": 5,
+    "wins": 2,
+    "draws": 2,
+    "losses": 1
+  },
+  {
+    "teamId": "czech-republic",
+    "lastMatches": [
+      "W",
+      "L",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 7,
+    "goalsAgainst": 7,
+    "wins": 2,
+    "draws": 1,
+    "losses": 2
+  },
+  {
     "teamId": "canada",
-    "lastMatches": ["W", "D", "L", "W", "D"],
+    "lastMatches": [
+      "W",
+      "D",
+      "L",
+      "W",
+      "D"
+    ],
     "goalsFor": 7,
     "goalsAgainst": 5,
     "wins": 2,
@@ -10,7 +76,13 @@
   },
   {
     "teamId": "bosnia",
-    "lastMatches": ["D", "W", "D", "L", "W"],
+    "lastMatches": [
+      "D",
+      "W",
+      "D",
+      "L",
+      "W"
+    ],
     "goalsFor": 6,
     "goalsAgainst": 4,
     "wins": 2,
@@ -18,44 +90,44 @@
     "losses": 1
   },
   {
-    "teamId": "france",
-    "lastMatches": ["W", "W", "D", "W", "L"],
+    "teamId": "qatar",
+    "lastMatches": [
+      "W",
+      "L",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 7,
+    "goalsAgainst": 7,
+    "wins": 2,
+    "draws": 1,
+    "losses": 2
+  },
+  {
+    "teamId": "switzerland",
+    "lastMatches": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "L"
+    ],
     "goalsFor": 10,
-    "goalsAgainst": 4,
+    "goalsAgainst": 5,
     "wins": 3,
     "draws": 1,
     "losses": 1
-  },
-  {
-    "teamId": "japan",
-    "lastMatches": ["W", "D", "W", "W", "D"],
-    "goalsFor": 11,
-    "goalsAgainst": 5,
-    "wins": 3,
-    "draws": 2,
-    "losses": 0
   },
   {
     "teamId": "brazil",
-    "lastMatches": ["W", "W", "L", "D", "W"],
-    "goalsFor": 9,
-    "goalsAgainst": 5,
-    "wins": 3,
-    "draws": 1,
-    "losses": 1
-  },
-  {
-    "teamId": "morocco",
-    "lastMatches": ["D", "W", "W", "D", "L"],
-    "goalsFor": 8,
-    "goalsAgainst": 4,
-    "wins": 2,
-    "draws": 2,
-    "losses": 1
-  },
-  {
-    "teamId": "argentina",
-    "lastMatches": ["W", "W", "W", "D", "W"],
+    "lastMatches": [
+      "W",
+      "W",
+      "W",
+      "D",
+      "W"
+    ],
     "goalsFor": 12,
     "goalsAgainst": 3,
     "wins": 4,
@@ -63,12 +135,588 @@
     "losses": 0
   },
   {
-    "teamId": "usa",
-    "lastMatches": ["W", "L", "W", "D", "W"],
+    "teamId": "morocco",
+    "lastMatches": [
+      "D",
+      "W",
+      "W",
+      "D",
+      "L"
+    ],
     "goalsFor": 8,
-    "goalsAgainst": 6,
+    "goalsAgainst": 4,
+    "wins": 2,
+    "draws": 2,
+    "losses": 1
+  },
+  {
+    "teamId": "haiti",
+    "lastMatches": [
+      "L",
+      "D",
+      "L",
+      "W",
+      "L"
+    ],
+    "goalsFor": 4,
+    "goalsAgainst": 10,
+    "wins": 1,
+    "draws": 1,
+    "losses": 3
+  },
+  {
+    "teamId": "scotland",
+    "lastMatches": [
+      "W",
+      "L",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 7,
+    "goalsAgainst": 7,
+    "wins": 2,
+    "draws": 1,
+    "losses": 2
+  },
+  {
+    "teamId": "usa",
+    "lastMatches": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "L"
+    ],
+    "goalsFor": 10,
+    "goalsAgainst": 5,
     "wins": 3,
     "draws": 1,
+    "losses": 1
+  },
+  {
+    "teamId": "paraguay",
+    "lastMatches": [
+      "W",
+      "L",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 7,
+    "goalsAgainst": 7,
+    "wins": 2,
+    "draws": 1,
+    "losses": 2
+  },
+  {
+    "teamId": "australia",
+    "lastMatches": [
+      "D",
+      "W",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 8,
+    "goalsAgainst": 5,
+    "wins": 2,
+    "draws": 2,
+    "losses": 1
+  },
+  {
+    "teamId": "turkey",
+    "lastMatches": [
+      "W",
+      "L",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 7,
+    "goalsAgainst": 7,
+    "wins": 2,
+    "draws": 1,
+    "losses": 2
+  },
+  {
+    "teamId": "germany",
+    "lastMatches": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "L"
+    ],
+    "goalsFor": 10,
+    "goalsAgainst": 5,
+    "wins": 3,
+    "draws": 1,
+    "losses": 1
+  },
+  {
+    "teamId": "curacao",
+    "lastMatches": [
+      "L",
+      "D",
+      "L",
+      "W",
+      "L"
+    ],
+    "goalsFor": 4,
+    "goalsAgainst": 10,
+    "wins": 1,
+    "draws": 1,
+    "losses": 3
+  },
+  {
+    "teamId": "ivory-coast",
+    "lastMatches": [
+      "W",
+      "L",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 7,
+    "goalsAgainst": 7,
+    "wins": 2,
+    "draws": 1,
+    "losses": 2
+  },
+  {
+    "teamId": "ecuador",
+    "lastMatches": [
+      "D",
+      "W",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 8,
+    "goalsAgainst": 5,
+    "wins": 2,
+    "draws": 2,
+    "losses": 1
+  },
+  {
+    "teamId": "netherlands",
+    "lastMatches": [
+      "W",
+      "W",
+      "W",
+      "D",
+      "W"
+    ],
+    "goalsFor": 12,
+    "goalsAgainst": 3,
+    "wins": 4,
+    "draws": 1,
+    "losses": 0
+  },
+  {
+    "teamId": "japan",
+    "lastMatches": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "D"
+    ],
+    "goalsFor": 11,
+    "goalsAgainst": 5,
+    "wins": 3,
+    "draws": 2,
+    "losses": 0
+  },
+  {
+    "teamId": "sweden",
+    "lastMatches": [
+      "W",
+      "L",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 7,
+    "goalsAgainst": 7,
+    "wins": 2,
+    "draws": 1,
+    "losses": 2
+  },
+  {
+    "teamId": "tunisia",
+    "lastMatches": [
+      "W",
+      "L",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 7,
+    "goalsAgainst": 7,
+    "wins": 2,
+    "draws": 1,
+    "losses": 2
+  },
+  {
+    "teamId": "belgium",
+    "lastMatches": [
+      "W",
+      "W",
+      "W",
+      "D",
+      "W"
+    ],
+    "goalsFor": 12,
+    "goalsAgainst": 3,
+    "wins": 4,
+    "draws": 1,
+    "losses": 0
+  },
+  {
+    "teamId": "egypt",
+    "lastMatches": [
+      "D",
+      "W",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 8,
+    "goalsAgainst": 5,
+    "wins": 2,
+    "draws": 2,
+    "losses": 1
+  },
+  {
+    "teamId": "iran",
+    "lastMatches": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "L"
+    ],
+    "goalsFor": 10,
+    "goalsAgainst": 5,
+    "wins": 3,
+    "draws": 1,
+    "losses": 1
+  },
+  {
+    "teamId": "new-zealand",
+    "lastMatches": [
+      "L",
+      "D",
+      "L",
+      "W",
+      "L"
+    ],
+    "goalsFor": 4,
+    "goalsAgainst": 10,
+    "wins": 1,
+    "draws": 1,
+    "losses": 3
+  },
+  {
+    "teamId": "spain",
+    "lastMatches": [
+      "W",
+      "W",
+      "W",
+      "D",
+      "W"
+    ],
+    "goalsFor": 12,
+    "goalsAgainst": 3,
+    "wins": 4,
+    "draws": 1,
+    "losses": 0
+  },
+  {
+    "teamId": "cape-verde",
+    "lastMatches": [
+      "D",
+      "L",
+      "W",
+      "L",
+      "D"
+    ],
+    "goalsFor": 5,
+    "goalsAgainst": 8,
+    "wins": 1,
+    "draws": 2,
+    "losses": 2
+  },
+  {
+    "teamId": "saudi-arabia",
+    "lastMatches": [
+      "D",
+      "L",
+      "W",
+      "L",
+      "D"
+    ],
+    "goalsFor": 5,
+    "goalsAgainst": 8,
+    "wins": 1,
+    "draws": 2,
+    "losses": 2
+  },
+  {
+    "teamId": "uruguay",
+    "lastMatches": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "L"
+    ],
+    "goalsFor": 10,
+    "goalsAgainst": 5,
+    "wins": 3,
+    "draws": 1,
+    "losses": 1
+  },
+  {
+    "teamId": "france",
+    "lastMatches": [
+      "W",
+      "W",
+      "W",
+      "D",
+      "W"
+    ],
+    "goalsFor": 12,
+    "goalsAgainst": 3,
+    "wins": 4,
+    "draws": 1,
+    "losses": 0
+  },
+  {
+    "teamId": "senegal",
+    "lastMatches": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "L"
+    ],
+    "goalsFor": 9,
+    "goalsAgainst": 4,
+    "wins": 3,
+    "draws": 1,
+    "losses": 1
+  },
+  {
+    "teamId": "iraq",
+    "lastMatches": [
+      "D",
+      "L",
+      "W",
+      "L",
+      "D"
+    ],
+    "goalsFor": 5,
+    "goalsAgainst": 8,
+    "wins": 1,
+    "draws": 2,
+    "losses": 2
+  },
+  {
+    "teamId": "norway",
+    "lastMatches": [
+      "D",
+      "W",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 10,
+    "goalsAgainst": 6,
+    "wins": 2,
+    "draws": 1,
+    "losses": 2
+  },
+  {
+    "teamId": "argentina",
+    "lastMatches": [
+      "W",
+      "W",
+      "W",
+      "D",
+      "W"
+    ],
+    "goalsFor": 12,
+    "goalsAgainst": 3,
+    "wins": 4,
+    "draws": 1,
+    "losses": 0
+  },
+  {
+    "teamId": "algeria",
+    "lastMatches": [
+      "D",
+      "W",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 8,
+    "goalsAgainst": 5,
+    "wins": 2,
+    "draws": 2,
+    "losses": 1
+  },
+  {
+    "teamId": "austria",
+    "lastMatches": [
+      "D",
+      "W",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 8,
+    "goalsAgainst": 5,
+    "wins": 2,
+    "draws": 2,
+    "losses": 1
+  },
+  {
+    "teamId": "jordan",
+    "lastMatches": [
+      "D",
+      "L",
+      "W",
+      "L",
+      "D"
+    ],
+    "goalsFor": 5,
+    "goalsAgainst": 8,
+    "wins": 1,
+    "draws": 2,
+    "losses": 2
+  },
+  {
+    "teamId": "portugal",
+    "lastMatches": [
+      "W",
+      "W",
+      "W",
+      "D",
+      "W"
+    ],
+    "goalsFor": 12,
+    "goalsAgainst": 3,
+    "wins": 4,
+    "draws": 1,
+    "losses": 0
+  },
+  {
+    "teamId": "dr-congo",
+    "lastMatches": [
+      "D",
+      "L",
+      "W",
+      "L",
+      "D"
+    ],
+    "goalsFor": 5,
+    "goalsAgainst": 8,
+    "wins": 1,
+    "draws": 2,
+    "losses": 2
+  },
+  {
+    "teamId": "uzbekistan",
+    "lastMatches": [
+      "W",
+      "L",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 7,
+    "goalsAgainst": 7,
+    "wins": 2,
+    "draws": 1,
+    "losses": 2
+  },
+  {
+    "teamId": "colombia",
+    "lastMatches": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "L"
+    ],
+    "goalsFor": 10,
+    "goalsAgainst": 5,
+    "wins": 3,
+    "draws": 1,
+    "losses": 1
+  },
+  {
+    "teamId": "england",
+    "lastMatches": [
+      "W",
+      "W",
+      "W",
+      "D",
+      "W"
+    ],
+    "goalsFor": 12,
+    "goalsAgainst": 3,
+    "wins": 4,
+    "draws": 1,
+    "losses": 0
+  },
+  {
+    "teamId": "croatia",
+    "lastMatches": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "L"
+    ],
+    "goalsFor": 10,
+    "goalsAgainst": 5,
+    "wins": 3,
+    "draws": 1,
+    "losses": 1
+  },
+  {
+    "teamId": "ghana",
+    "lastMatches": [
+      "W",
+      "L",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 6,
+    "goalsAgainst": 7,
+    "wins": 2,
+    "draws": 1,
+    "losses": 2
+  },
+  {
+    "teamId": "panama",
+    "lastMatches": [
+      "D",
+      "W",
+      "D",
+      "W",
+      "L"
+    ],
+    "goalsFor": 8,
+    "goalsAgainst": 5,
+    "wins": 2,
+    "draws": 2,
     "losses": 1
   }
 ]

@@ -2,7 +2,8 @@
 
 Application web éducative en Vue.js 3 + Vite qui affiche des prédictions
 statistiques pour des matchs de football de Coupe du Monde à partir de données JSON
-locales.
+locales. La base d’exemple contient les 48 équipes de la Coupe du Monde 2026 et
+les 72 matchs de phase de groupes.
 
 ## Stack
 
@@ -47,10 +48,10 @@ npm run build
 
 Les exemples sont dans `src/data` :
 
-- `teams.json`
-- `matches.json`
-- `performances.json`
-- `headToHead.json`
+- `teams.json` : 48 équipes
+- `matches.json` : 72 matchs de groupes
+- `performances.json` : performances synthétiques pour les 48 équipes
+- `headToHead.json` : historique direct synthétique pour chaque affiche de groupe
 
 ## Modèle de prédiction
 
