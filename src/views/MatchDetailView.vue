@@ -36,6 +36,18 @@ const statusLabel = computed(() => {
   if (context.value?.match.status === 'live') return 'En direct'
   return 'À venir'
 })
+
+const resultLabel = computed(() => {
+  const result = context.value?.match.result
+  if (!result) return null
+
+  return `${result.teamAScore}-${result.teamBScore}`
+})
+
+const resultMatchesPrediction = computed(() => {
+  if (!resultLabel.value || !context.value?.prediction?.probableScore) return null
+  return resultLabel.value === context.value.prediction.probableScore
+})
 </script>
 
 <template>
@@ -68,20 +80,51 @@ const statusLabel = computed(() => {
         </div>
       </section>
 
-      <section v-if="context.match.result" class="card border-emerald-200 bg-emerald-50 p-5">
+      <section
+        v-if="context.match.result"
+        class="card p-5"
+        :class="{
+          'border-emerald-200 bg-emerald-50': resultMatchesPrediction !== false,
+          'border-rose-200 bg-rose-50': resultMatchesPrediction === false,
+        }"
+      >
         <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
-            <p class="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+            <p
+              class="text-sm font-semibold uppercase tracking-wide"
+              :class="{
+                'text-emerald-700': resultMatchesPrediction !== false,
+                'text-rose-700': resultMatchesPrediction === false,
+              }"
+            >
               Résultat actuel
             </p>
-            <p class="mt-1 text-3xl font-bold text-emerald-950">
-              {{ context.teamA.name }} {{ context.match.result.teamAScore }}-{{
-                context.match.result.teamBScore
-              }}
-              {{ context.teamB.name }}
+            <p
+              class="mt-1 text-3xl font-bold"
+              :class="{
+                'text-emerald-950': resultMatchesPrediction !== false,
+                'text-rose-950': resultMatchesPrediction === false,
+              }"
+            >
+              {{ context.teamA.name }} {{ resultLabel }} {{ context.teamB.name }}
+            </p>
+            <p
+              class="mt-1 text-sm font-medium"
+              :class="{
+                'text-emerald-800': resultMatchesPrediction,
+                'text-rose-800': resultMatchesPrediction === false,
+              }"
+            >
+              Prédiction : {{ context.prediction.probableScore }}
             </p>
           </div>
-          <div class="rounded-md bg-white/70 px-4 py-3 text-sm text-emerald-900">
+          <div
+            class="rounded-md bg-white/70 px-4 py-3 text-sm"
+            :class="{
+              'text-emerald-900': resultMatchesPrediction !== false,
+              'text-rose-900': resultMatchesPrediction === false,
+            }"
+          >
             <p class="font-semibold">{{ statusLabel }}</p>
             <p>Source : {{ context.match.result.source }}</p>
           </div>

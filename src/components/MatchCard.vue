@@ -32,6 +32,11 @@ const resultLabel = computed(() => {
   if (!props.match.result) return null
   return `${props.match.result.teamAScore}-${props.match.result.teamBScore}`
 })
+
+const resultMatchesPrediction = computed(() => {
+  if (!resultLabel.value || !prediction.value?.probableScore) return null
+  return resultLabel.value === prediction.value.probableScore
+})
 </script>
 
 <template>
@@ -69,10 +74,41 @@ const resultLabel = computed(() => {
 
     <p class="mt-4 text-sm text-slate-500">{{ match.stadium }}</p>
 
-    <div v-if="resultLabel" class="mt-4 rounded-md border border-emerald-200 bg-emerald-50 p-3">
-      <p class="text-xs font-semibold uppercase tracking-wide text-emerald-700">Résultat actuel</p>
-      <p class="mt-1 text-xl font-bold text-emerald-950">
+    <div
+      v-if="resultLabel"
+      class="mt-4 rounded-md border p-3"
+      :class="{
+        'border-emerald-200 bg-emerald-50': resultMatchesPrediction !== false,
+        'border-rose-200 bg-rose-50': resultMatchesPrediction === false,
+      }"
+    >
+      <p
+        class="text-xs font-semibold uppercase tracking-wide"
+        :class="{
+          'text-emerald-700': resultMatchesPrediction !== false,
+          'text-rose-700': resultMatchesPrediction === false,
+        }"
+      >
+        Résultat actuel
+      </p>
+      <p
+        class="mt-1 text-xl font-bold"
+        :class="{
+          'text-emerald-950': resultMatchesPrediction !== false,
+          'text-rose-950': resultMatchesPrediction === false,
+        }"
+      >
         {{ teamA.name }} {{ resultLabel }} {{ teamB.name }}
+      </p>
+      <p
+        v-if="prediction"
+        class="mt-1 text-sm font-medium"
+        :class="{
+          'text-emerald-800': resultMatchesPrediction,
+          'text-rose-800': resultMatchesPrediction === false,
+        }"
+      >
+        Prédiction : {{ prediction.probableScore }}
       </p>
     </div>
 
