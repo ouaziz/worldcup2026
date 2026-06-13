@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import MatchCard from '@/components/MatchCard.vue'
 import MatchFilters from '@/components/MatchFilters.vue'
 import { useMatchStore } from '@/stores/matchStore'
@@ -12,9 +12,22 @@ const filters = ref({ group: '', team: '', date: '' })
 
 onMounted(async () => {
   await Promise.all([matchStore.loadMatches(), teamStore.loadTeams()])
+  matchStore.startAutoRefresh()
+})
+
+onUnmounted(() => {
+  matchStore.stopAutoRefresh()
 })
 
 const teamsById = computed(() => Object.fromEntries(teamStore.teams.map((team) => [team.id, team])))
+
+const lastUpdatedLabel = computed(() => {
+  if (!matchStore.lastUpdatedAt) return 'Mise à jour en attente'
+
+  return new Intl.DateTimeFormat('fr-CA', {
+    timeStyle: 'medium',
+  }).format(new Date(matchStore.lastUpdatedAt))
+})
 
 const filteredMatches = computed(() => {
   return matchStore.matches.filter((match) => {
@@ -47,8 +60,15 @@ const filteredMatches = computed(() => {
         </p>
       </div>
       <div class="rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900">
-        Aucun module de pari sportif n’est inclus. Les données sont locales et remplaçables par une
-        API via <code>apiService.js</code>.
+        <p>Aucun module de pari sportif n’est inclus.</p>
+        <p class="mt-2 font-semibold">Scores mis à jour automatiquement.</p>
+        <p class="mt-1 text-emerald-800">
+          Dernière vérification : {{ lastUpdatedLabel }}
+          <span v-if="matchStore.refreshing">...</span>
+        </p>
+        <p v-if="matchStore.refreshError" class="mt-1 text-rose-700">
+          {{ matchStore.refreshError }}
+        </p>
       </div>
     </section>
 

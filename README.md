@@ -24,6 +24,7 @@ les 72 matchs de phase de groupes.
 - Forme récente
 - Historique des confrontations directes
 - Badges Favori, Match serré, Confiance élevée/moyenne/faible
+- Scores réels injectables par flux JSON avec rafraîchissement automatique
 - Architecture prête pour remplacer les JSON par une API via `src/services/apiService.js`
 
 ## Installation
@@ -52,6 +53,21 @@ Les exemples sont dans `src/data` :
 - `matches.json` : 72 matchs de groupes
 - `performances.json` : performances synthétiques pour les 48 équipes
 - `headToHead.json` : historique direct synthétique pour chaque affiche de groupe
+
+## Scores à jour
+
+Par défaut, l’application utilise `src/data/matches.json`. Pour garder les scores
+à jour sans modifier le code, exposez un flux JSON et configurez :
+
+```sh
+VITE_MATCHES_FEED_URL=https://example.com/worldcup2026/matches.json
+VITE_MATCH_REFRESH_MS=60000
+```
+
+Le flux peut renvoyer soit un tableau de matchs, soit `{ "matches": [...] }`.
+Chaque match distant doit utiliser le même `id` que `src/data/matches.json`.
+Les champs reçus remplacent les champs locaux, ce qui permet de mettre à jour
+`status` et `result` pendant la compétition.
 
 ## Modèle de prédiction
 

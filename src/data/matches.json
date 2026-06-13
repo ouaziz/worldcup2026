@@ -13,8 +13,8 @@
       "teamAScore": 2,
       "teamBScore": 0,
       "winnerTeamId": "mexico",
-      "source": "The Guardian, 2026-06-11",
-      "updatedAt": "2026-06-11T22:00:00.000Z"
+      "source": "SB Nation, 2026-06-12",
+      "updatedAt": "2026-06-12T20:59:00.000Z"
     }
   },
   {
@@ -24,9 +24,16 @@
     "teamBId": "czech-republic",
     "stadium": "Estadio Akron, Guadalajara",
     "group": "A",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 2,
+      "teamBScore": 1,
+      "winnerTeamId": "south-korea",
+      "source": "SB Nation, 2026-06-12",
+      "updatedAt": "2026-06-12T20:59:00.000Z"
+    }
   },
   {
     "id": "match-03-canada-bosnia",
@@ -35,9 +42,16 @@
     "teamBId": "bosnia",
     "stadium": "BMO Field, Toronto",
     "group": "B",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": "canada"
+    "homeAdvantageTeamId": "canada",
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 1,
+      "winnerTeamId": null,
+      "source": "SB Nation, 2026-06-12",
+      "updatedAt": "2026-06-12T20:59:00.000Z"
+    }
   },
   {
     "id": "match-04-usa-paraguay",

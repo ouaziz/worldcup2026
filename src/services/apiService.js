@@ -4,12 +4,57 @@ import matches from '@/data/matches.json'
 import performances from '@/data/performances.json'
 import headToHead from '@/data/headToHead.json'
 
+const matchFeedUrl = import.meta.env.VITE_MATCHES_FEED_URL
+const localMatches = matches
+let matchesCache = null
+
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL || '/',
   timeout: 8000,
 })
 
 const wait = (data) => new Promise((resolve) => window.setTimeout(() => resolve(data), 120))
+
+function normalizeMatchesPayload(payload) {
+  if (Array.isArray(payload)) return payload
+  if (Array.isArray(payload?.matches)) return payload.matches
+  return null
+}
+
+function mergeMatches(baseMatches, remoteMatches) {
+  if (!remoteMatches?.length) return baseMatches
+
+  const remoteById = new Map(remoteMatches.map((match) => [match.id, match]))
+
+  return baseMatches.map((match) => {
+    const remoteMatch = remoteById.get(match.id)
+    if (!remoteMatch) return match
+
+    return {
+      ...match,
+      ...remoteMatch,
+      result: Object.prototype.hasOwnProperty.call(remoteMatch, 'result')
+        ? remoteMatch.result
+        : match.result,
+    }
+  })
+}
+
+async function fetchRemoteMatches() {
+  if (!matchFeedUrl) return null
+
+  const response = await apiClient.get(matchFeedUrl, {
+    baseURL: undefined,
+    params: { t: Date.now() },
+  })
+  const remoteMatches = normalizeMatchesPayload(response.data)
+
+  if (!remoteMatches) {
+    throw new Error('Le flux de matchs doit renvoyer un tableau ou un objet { matches }.')
+  }
+
+  return mergeMatches(localMatches, remoteMatches)
+}
 
 export const apiService = {
   client: apiClient,
@@ -18,8 +63,21 @@ export const apiService = {
     return wait(teams)
   },
 
-  async getMatches() {
-    return wait(matches)
+  async getMatches({ forceRefresh = false } = {}) {
+    if (matchesCache && !forceRefresh) return wait(matchesCache)
+
+    try {
+      matchesCache = (await fetchRemoteMatches()) || localMatches
+    } catch (error) {
+      console.warn('Impossible de mettre les scores à jour depuis le flux distant.', error)
+      matchesCache = matchesCache || localMatches
+    }
+
+    return wait(matchesCache)
+  },
+
+  async refreshMatches() {
+    return this.getMatches({ forceRefresh: true })
   },
 
   async getPerformances() {

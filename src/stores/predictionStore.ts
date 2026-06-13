@@ -23,5 +23,14 @@ export const usePredictionStore = defineStore('predictions', {
         this.loading = false
       }
     },
+    syncMatches(matches: any[]) {
+      for (const cachedContext of Object.values(this.cache)) {
+        const match = matches.find((item) => item.id === cachedContext.match.id)
+        if (!match) continue
+
+        cachedContext.match = match
+        cachedContext.prediction = calculatePrediction(cachedContext)
+      }
+    },
   },
 })

@@ -1,19 +1,26 @@
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, onUnmounted } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import FormChart from '@/components/FormChart.vue'
 import HeadToHead from '@/components/HeadToHead.vue'
 import MatchPrediction from '@/components/MatchPrediction.vue'
 import TeamStats from '@/components/TeamStats.vue'
+import { useMatchStore } from '@/stores/matchStore'
 import { usePredictionStore } from '@/stores/predictionStore'
 
 const route = useRoute()
+const matchStore = useMatchStore()
 const predictionStore = usePredictionStore()
 const matchId = computed(() => String(route.params.id))
 const context = computed(() => predictionStore.cache[matchId.value])
 
-onMounted(() => {
-  predictionStore.predictMatch(matchId.value)
+onMounted(async () => {
+  await Promise.all([matchStore.loadMatches(), predictionStore.predictMatch(matchId.value)])
+  matchStore.startAutoRefresh()
+})
+
+onUnmounted(() => {
+  matchStore.stopAutoRefresh()
 })
 
 const dateLabel = computed(() => {
