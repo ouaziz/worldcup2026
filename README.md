@@ -20,7 +20,6 @@ les 72 matchs de phase de groupes.
 - Liste des matchs avec filtres par groupe, date et équipe
 - Page détail avec statistiques des deux équipes
 - Probabilités victoire équipe A, match nul, victoire équipe B
-- Score probable
 - Forme récente
 - Historique des confrontations directes
 - Badges Favori, Match serré, Confiance élevée/moyenne/faible

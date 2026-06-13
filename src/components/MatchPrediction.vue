@@ -16,10 +16,6 @@ defineProps<{
           <p class="text-sm uppercase tracking-wide text-emerald-300">Prédiction statistique</p>
           <h1 class="mt-1 text-3xl font-bold">{{ teamA.name }} vs {{ teamB.name }}</h1>
         </div>
-        <div class="rounded-lg bg-white/10 px-5 py-3 text-center">
-          <p class="text-sm text-slate-300">Score probable</p>
-          <p class="text-3xl font-bold">{{ prediction.probableScore }}</p>
-        </div>
       </div>
     </div>
 

@@ -60,9 +60,16 @@
     "teamBId": "paraguay",
     "stadium": "SoFi Stadium, Los Angeles",
     "group": "D",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": "usa"
+    "homeAdvantageTeamId": "usa",
+    "result": {
+      "teamAScore": 4,
+      "teamBScore": 1,
+      "winnerTeamId": "usa",
+      "source": "SB Nation, 2026-06-13",
+      "updatedAt": "2026-06-13T03:03:00.000Z"
+    }
   },
   {
     "id": "match-05-qatar-switzerland",
