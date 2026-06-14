@@ -78,9 +78,16 @@
     "teamBId": "switzerland",
     "stadium": "Levi’s Stadium, San Francisco Bay Area",
     "group": "B",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 1,
+      "winnerTeamId": null,
+      "source": "The Guardian, 2026-06-13",
+      "updatedAt": "2026-06-14T22:58:18.000Z"
+    }
   },
   {
     "id": "match-06-brazil-morocco",
@@ -89,9 +96,16 @@
     "teamBId": "morocco",
     "stadium": "MetLife Stadium, New York/New Jersey",
     "group": "C",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 1,
+      "winnerTeamId": null,
+      "source": "The Guardian, 2026-06-13",
+      "updatedAt": "2026-06-14T22:58:18.000Z"
+    }
   },
   {
     "id": "match-07-haiti-scotland",
@@ -100,9 +114,16 @@
     "teamBId": "scotland",
     "stadium": "Gillette Stadium, Boston",
     "group": "C",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 0,
+      "teamBScore": 1,
+      "winnerTeamId": "scotland",
+      "source": "The Guardian, 2026-06-14",
+      "updatedAt": "2026-06-14T22:58:18.000Z"
+    }
   },
   {
     "id": "match-08-australia-turkey",
@@ -111,9 +132,16 @@
     "teamBId": "turkey",
     "stadium": "BC Place, Vancouver",
     "group": "D",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 2,
+      "teamBScore": 0,
+      "winnerTeamId": "australia",
+      "source": "The Guardian, 2026-06-14",
+      "updatedAt": "2026-06-14T22:58:18.000Z"
+    }
   },
   {
     "id": "match-09-germany-curacao",
@@ -122,9 +150,16 @@
     "teamBId": "curacao",
     "stadium": "NRG Stadium, Houston",
     "group": "E",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 7,
+      "teamBScore": 1,
+      "winnerTeamId": "germany",
+      "source": "The Guardian, 2026-06-14",
+      "updatedAt": "2026-06-14T22:58:18.000Z"
+    }
   },
   {
     "id": "match-10-netherlands-japan",
