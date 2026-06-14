@@ -170,7 +170,14 @@
     "group": "F",
     "status": "scheduled",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 2,
+      "teamBScore": 2,
+      "winnerTeamId": null,
+      "source": "Mouhcine, 2026-06-14",
+      "updatedAt": "2026-06-14T22:58:18.000Z"
+    }
   },
   {
     "id": "match-11-ivory-coast-ecuador",
