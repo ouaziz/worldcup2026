@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import GoalPredictionSummary from './GoalPredictionSummary.vue'
 import ProbabilityBars from './ProbabilityBars.vue'
 
 defineProps<{
@@ -65,6 +66,10 @@ defineProps<{
           </div>
         </dl>
       </div>
+    </div>
+
+    <div class="border-t border-slate-200 p-5">
+      <GoalPredictionSummary :prediction="prediction" :team-a="teamA" :team-b="teamB" />
     </div>
   </section>
 </template>

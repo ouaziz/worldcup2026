@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { usePredictionStore } from '@/stores/predictionStore'
+import GoalPredictionSummary from './GoalPredictionSummary.vue'
 import ProbabilityBars from './ProbabilityBars.vue'
 
 const LIVE_WINDOW_MS = 135 * 60 * 1000
@@ -141,6 +142,12 @@ const resultScoreTone = (teamId: string) => {
         </span>
       </div>
       <ProbabilityBars :probabilities="prediction.probabilities" :team-a-name="teamA.name" :team-b-name="teamB.name" />
+      <GoalPredictionSummary
+        :prediction="prediction"
+        :team-a="teamA"
+        :team-b="teamB"
+        compact
+      />
     </div>
 
     <RouterLink
