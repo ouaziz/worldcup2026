@@ -61,7 +61,7 @@ const barData = computed(() => ({
 }))
 
 const radarData = computed(() => ({
-  labels: ['Classement', 'Forme', 'Attaque', 'Défense', 'Historique'],
+  labels: ['Classement', 'Forme', 'Attaque', 'Défense', 'Historique', 'Joueurs'],
   datasets: [
     {
       label: props.teamA.name,
@@ -73,6 +73,7 @@ const radarData = computed(() => ({
         props.factors?.attack?.[0] || 0,
         props.factors?.defense?.[0] || 0,
         props.factors?.headToHead?.[0] || 0,
+        props.factors?.players?.[0] || 0,
       ],
     },
     {
@@ -85,6 +86,7 @@ const radarData = computed(() => ({
         props.factors?.attack?.[1] || 0,
         props.factors?.defense?.[1] || 0,
         props.factors?.headToHead?.[1] || 0,
+        props.factors?.players?.[1] || 0,
       ],
     },
   ],

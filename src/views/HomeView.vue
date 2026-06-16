@@ -13,16 +13,19 @@ const teamStore = useTeamStore()
 const filters = ref({ group: '', team: '', date: '' })
 const performances = ref<any[]>([])
 const headToHead = ref<any[]>([])
+const playerProfiles = ref<any[]>([])
 
 onMounted(async () => {
-  const [, , performanceData, headToHeadData] = await Promise.all([
+  const [, , performanceData, headToHeadData, playerData] = await Promise.all([
     matchStore.loadMatches(),
     teamStore.loadTeams(),
     apiService.getPerformances(),
     apiService.getHeadToHead(),
+    apiService.getPlayers(),
   ])
   performances.value = performanceData as any[]
   headToHead.value = headToHeadData as any[]
+  playerProfiles.value = playerData as any[]
   matchStore.startAutoRefresh()
 })
 
@@ -33,6 +36,9 @@ onUnmounted(() => {
 const teamsById = computed(() => Object.fromEntries(teamStore.teams.map((team) => [team.id, team])))
 const performancesByTeamId = computed(() =>
   Object.fromEntries(performances.value.map((performance) => [performance.teamId, performance])),
+)
+const playersByTeamId = computed(() =>
+  Object.fromEntries(playerProfiles.value.map((profile) => [profile.teamId, profile])),
 )
 
 function predictedOutcome(prediction: any) {
@@ -65,6 +71,8 @@ const predictionAccuracy = computed(() => {
     const teamB = teamsById.value[match.teamBId]
     const performanceA = performancesByTeamId.value[match.teamAId]
     const performanceB = performancesByTeamId.value[match.teamBId]
+    const playersA = playersByTeamId.value[match.teamAId]
+    const playersB = playersByTeamId.value[match.teamBId]
     const directHistory = headToHead.value.find(
       (item) =>
         (item.teamAId === match.teamAId && item.teamBId === match.teamBId) ||
@@ -79,6 +87,8 @@ const predictionAccuracy = computed(() => {
       teamB,
       performanceA,
       performanceB,
+      playersA,
+      playersB,
       headToHead: directHistory,
     })
     const predicted = predictedOutcome(prediction)

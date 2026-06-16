@@ -55,6 +55,14 @@ defineProps<{
             <dt class="text-sm text-slate-500">Score modèle {{ teamB.name }}</dt>
             <dd class="text-xl font-bold">{{ prediction.teamBScore }}</dd>
           </div>
+          <div class="rounded-md bg-slate-50 p-3">
+            <dt class="text-sm text-slate-500">Joueurs clés {{ teamA.name }}</dt>
+            <dd class="text-xl font-bold">{{ Math.round(prediction.factors.players[0]) }}/100</dd>
+          </div>
+          <div class="rounded-md bg-slate-50 p-3">
+            <dt class="text-sm text-slate-500">Joueurs clés {{ teamB.name }}</dt>
+            <dd class="text-xl font-bold">{{ Math.round(prediction.factors.players[1]) }}/100</dd>
+          </div>
         </dl>
       </div>
     </div>

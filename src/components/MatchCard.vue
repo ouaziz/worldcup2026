@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { usePredictionStore } from '@/stores/predictionStore'
 import ProbabilityBars from './ProbabilityBars.vue'
+
+const LIVE_WINDOW_MS = 135 * 60 * 1000
 
 const props = defineProps<{
   match: any
@@ -12,8 +14,23 @@ const props = defineProps<{
 const predictionStore = usePredictionStore()
 const context = computed(() => predictionStore.cache[props.match.id])
 const prediction = computed(() => context.value?.prediction)
+const now = ref(Date.now())
+let liveTimer: ReturnType<typeof window.setInterval> | null = null
 
 predictionStore.predictMatch(props.match.id)
+
+onMounted(() => {
+  liveTimer = window.setInterval(() => {
+    now.value = Date.now()
+  }, 30_000)
+})
+
+onUnmounted(() => {
+  if (!liveTimer) return
+
+  window.clearInterval(liveTimer)
+  liveTimer = null
+})
 
 const dateLabel = computed(() =>
   new Intl.DateTimeFormat('fr-CA', {
@@ -22,7 +39,16 @@ const dateLabel = computed(() =>
   }).format(new Date(props.match.date)),
 )
 
+const isLiveNow = computed(() => {
+  if (props.match.status === 'completed') return false
+  if (props.match.status === 'live') return true
+
+  const kickoff = new Date(props.match.date).getTime()
+  return now.value >= kickoff && now.value < kickoff + LIVE_WINDOW_MS
+})
+
 const statusLabel = computed(() => {
+  if (isLiveNow.value) return 'LIVE NOW'
   if (props.match.status === 'completed') return 'Terminé'
   if (props.match.status === 'live') return 'En direct'
   return 'À venir'
@@ -42,18 +68,28 @@ const resultScoreTone = (teamId: string) => {
 </script>
 
 <template>
-  <article class="card flex h-full flex-col p-5">
+  <article
+    class="card flex h-full flex-col p-5 transition"
+    :class="{
+      'border-rose-300 bg-rose-50 shadow-md shadow-rose-100 ring-2 ring-rose-200': isLiveNow,
+    }"
+  >
     <div class="mb-4 flex items-start justify-between gap-3">
       <div>
-        <p class="text-sm font-medium text-emerald-700">Groupe {{ match.group }}</p>
+        <p
+          class="text-sm font-medium"
+          :class="isLiveNow ? 'text-rose-700' : 'text-emerald-700'"
+        >
+          Groupe {{ match.group }}
+        </p>
         <p class="text-sm text-slate-500">{{ dateLabel }}</p>
       </div>
       <span
         class="rounded-full px-3 py-1 text-xs font-semibold"
         :class="{
-          'bg-emerald-100 text-emerald-700': match.status === 'completed',
-          'bg-rose-100 text-rose-700': match.status === 'live',
-          'bg-slate-100 text-slate-600': match.status === 'scheduled',
+          'bg-rose-600 text-white shadow-sm': isLiveNow,
+          'bg-emerald-100 text-emerald-700': !isLiveNow && match.status === 'completed',
+          'bg-slate-100 text-slate-600': !isLiveNow && match.status === 'scheduled',
         }"
       >
         {{ statusLabel }}

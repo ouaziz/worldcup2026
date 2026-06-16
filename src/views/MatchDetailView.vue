@@ -4,6 +4,7 @@ import { RouterLink, useRoute } from 'vue-router'
 import FormChart from '@/components/FormChart.vue'
 import HeadToHead from '@/components/HeadToHead.vue'
 import MatchPrediction from '@/components/MatchPrediction.vue'
+import PlayerComparison from '@/components/PlayerComparison.vue'
 import TeamStats from '@/components/TeamStats.vue'
 import { useMatchStore } from '@/stores/matchStore'
 import { usePredictionStore } from '@/stores/predictionStore'
@@ -111,6 +112,13 @@ const resultScoreTone = (teamId: string) => {
 
       <HeadToHead :team-a="context.teamA" :team-b="context.teamB" :head-to-head="context.headToHead" />
 
+      <PlayerComparison
+        :team-a="context.teamA"
+        :team-b="context.teamB"
+        :players-a="context.playersA"
+        :players-b="context.playersB"
+      />
+
       <FormChart
         :team-a="context.teamA"
         :team-b="context.teamB"
@@ -122,9 +130,10 @@ const resultScoreTone = (teamId: string) => {
       <section class="card p-5">
         <h2 class="text-xl font-semibold">Formule utilisée</h2>
         <p class="mt-2 text-slate-600">
-          Score équipe = 30% classement FIFA + 25% forme récente + 20% attaque + 15% défense +
-          10% historique direct. Un léger ajustement tient compte de l’avantage terrain et de
-          l’importance du match, puis les scores sont convertis en probabilités totalisant 100%.
+          Score équipe = 24% classement FIFA + 20% forme récente + 17% attaque + 13% défense +
+          8% historique direct + 18% joueurs clés. Un léger ajustement tient compte de l’avantage
+          terrain et de l’importance du match, puis les scores sont convertis en probabilités
+          totalisant 100%.
         </p>
       </section>
     </template>

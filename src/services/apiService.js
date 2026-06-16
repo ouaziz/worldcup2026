@@ -3,6 +3,7 @@ import teams from '@/data/teams.json'
 import matches from '@/data/matches.json'
 import performances from '@/data/performances.json'
 import headToHead from '@/data/headToHead.json'
+import players from '@/data/players.json'
 
 const matchFeedUrl = import.meta.env.VITE_MATCHES_FEED_URL
 const localMatches = matches
@@ -88,12 +89,17 @@ export const apiService = {
     return wait(headToHead)
   },
 
+  async getPlayers() {
+    return wait(players)
+  },
+
   async getMatchContext(matchId) {
-    const [allTeams, allMatches, allPerformances, allHeadToHead] = await Promise.all([
+    const [allTeams, allMatches, allPerformances, allHeadToHead, allPlayers] = await Promise.all([
       this.getTeams(),
       this.getMatches(),
       this.getPerformances(),
       this.getHeadToHead(),
+      this.getPlayers(),
     ])
 
     const match = allMatches.find((item) => item.id === matchId)
@@ -108,6 +114,8 @@ export const apiService = {
       teamB,
       performanceA: allPerformances.find((item) => item.teamId === match.teamAId),
       performanceB: allPerformances.find((item) => item.teamId === match.teamBId),
+      playersA: allPlayers.find((item) => item.teamId === match.teamAId),
+      playersB: allPlayers.find((item) => item.teamId === match.teamBId),
       headToHead: allHeadToHead.find(
         (item) =>
           (item.teamAId === match.teamAId && item.teamBId === match.teamBId) ||

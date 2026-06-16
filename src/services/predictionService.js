@@ -1,9 +1,10 @@
 const WEIGHTS = {
-  ranking: 0.3,
-  recentForm: 0.25,
-  attack: 0.2,
-  defense: 0.15,
-  headToHead: 0.1,
+  ranking: 0.24,
+  recentForm: 0.2,
+  attack: 0.17,
+  defense: 0.13,
+  headToHead: 0.08,
+  players: 0.18,
 }
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max)
@@ -41,13 +42,34 @@ function headToHeadScore(headToHead, teamId) {
   return clamp(resultScore + goalScore, 10, 100)
 }
 
-function weightedTeamScore(team, performance, headToHead, match) {
+function playerScore(playerProfiles) {
+  if (!playerProfiles?.players?.length) return 50
+
+  const total = playerProfiles.players.reduce((sum, player) => {
+    const historyScore = clamp(player.caps * 0.45 + player.goals * 1.25, 20, 100)
+    const availabilityScore = player.status === 'starter' ? 100 : player.status === 'rotation' ? 82 : 62
+
+    return (
+      sum +
+      historyScore * 0.24 +
+      player.recentForm * 0.24 +
+      player.performance * 0.28 +
+      player.endurance * 0.18 +
+      availabilityScore * 0.06
+    )
+  }, 0)
+
+  return clamp(total / playerProfiles.players.length, 10, 100)
+}
+
+function weightedTeamScore(team, performance, headToHead, match, playerProfiles) {
   const baseScore =
     rankingScore(team) * WEIGHTS.ranking +
     recentFormScore(performance) * WEIGHTS.recentForm +
     attackScore(performance) * WEIGHTS.attack +
     defenseScore(performance) * WEIGHTS.defense +
-    headToHeadScore(headToHead, team.id) * WEIGHTS.headToHead
+    headToHeadScore(headToHead, team.id) * WEIGHTS.headToHead +
+    playerScore(playerProfiles) * WEIGHTS.players
 
   const homeBonus = match.homeAdvantageTeamId === team.id ? 4 : 0
   const importanceBonus = clamp((match.importance || 0.7) * 3, 0, 3)
@@ -116,9 +138,18 @@ function badges(probabilities, teamA, teamB) {
   }
 }
 
-export function calculatePrediction({ match, teamA, teamB, performanceA, performanceB, headToHead }) {
-  const scoreA = weightedTeamScore(teamA, performanceA, headToHead, match)
-  const scoreB = weightedTeamScore(teamB, performanceB, headToHead, match)
+export function calculatePrediction({
+  match,
+  teamA,
+  teamB,
+  performanceA,
+  performanceB,
+  playersA,
+  playersB,
+  headToHead,
+}) {
+  const scoreA = weightedTeamScore(teamA, performanceA, headToHead, match, playersA)
+  const scoreB = weightedTeamScore(teamB, performanceB, headToHead, match, playersB)
   const probabilities = normalizeProbabilities(scoreA, scoreB, performanceA, performanceB)
 
   return {
@@ -134,6 +165,7 @@ export function calculatePrediction({ match, teamA, teamB, performanceA, perform
       attack: [attackScore(performanceA), attackScore(performanceB)],
       defense: [defenseScore(performanceA), defenseScore(performanceB)],
       headToHead: [headToHeadScore(headToHead, teamA.id), headToHeadScore(headToHead, teamB.id)],
+      players: [playerScore(playersA), playerScore(playersB)],
     },
   }
 }
