@@ -4,14 +4,25 @@ import MatchCard from '@/components/MatchCard.vue'
 import MatchFilters from '@/components/MatchFilters.vue'
 import { useMatchStore } from '@/stores/matchStore'
 import { useTeamStore } from '@/stores/teamStore'
+import apiService from '@/services/apiService'
+import { calculatePrediction } from '@/services/predictionService'
 
 const matchStore = useMatchStore()
 const teamStore = useTeamStore()
 
 const filters = ref({ group: '', team: '', date: '' })
+const performances = ref<any[]>([])
+const headToHead = ref<any[]>([])
 
 onMounted(async () => {
-  await Promise.all([matchStore.loadMatches(), teamStore.loadTeams()])
+  const [, , performanceData, headToHeadData] = await Promise.all([
+    matchStore.loadMatches(),
+    teamStore.loadTeams(),
+    apiService.getPerformances(),
+    apiService.getHeadToHead(),
+  ])
+  performances.value = performanceData as any[]
+  headToHead.value = headToHeadData as any[]
   matchStore.startAutoRefresh()
 })
 
@@ -20,6 +31,80 @@ onUnmounted(() => {
 })
 
 const teamsById = computed(() => Object.fromEntries(teamStore.teams.map((team) => [team.id, team])))
+const performancesByTeamId = computed(() =>
+  Object.fromEntries(performances.value.map((performance) => [performance.teamId, performance])),
+)
+
+function predictedOutcome(prediction: any) {
+  const outcomes = [
+    { key: 'teamA', value: prediction.probabilities.teamAWin },
+    { key: 'draw', value: prediction.probabilities.draw },
+    { key: 'teamB', value: prediction.probabilities.teamBWin },
+  ]
+  const maxValue = Math.max(...outcomes.map((outcome) => outcome.value))
+  const winners = outcomes.filter((outcome) => outcome.value === maxValue)
+
+  return winners.length === 1 && winners[0] ? winners[0].key : 'undecided'
+}
+
+function actualOutcome(match: any) {
+  if (!match.result) return null
+  if (match.result.teamAScore === match.result.teamBScore) return 'draw'
+  return match.result.winnerTeamId === match.teamAId ? 'teamA' : 'teamB'
+}
+
+const predictionAccuracy = computed(() => {
+  let correct = 0
+  let wrong = 0
+  let undecided = 0
+
+  for (const match of matchStore.matches) {
+    if (match.status !== 'completed' || !match.result) continue
+
+    const teamA = teamsById.value[match.teamAId]
+    const teamB = teamsById.value[match.teamBId]
+    const performanceA = performancesByTeamId.value[match.teamAId]
+    const performanceB = performancesByTeamId.value[match.teamBId]
+    const directHistory = headToHead.value.find(
+      (item) =>
+        (item.teamAId === match.teamAId && item.teamBId === match.teamBId) ||
+        (item.teamAId === match.teamBId && item.teamBId === match.teamAId),
+    )
+
+    if (!teamA || !teamB || !performanceA || !performanceB) continue
+
+    const prediction = calculatePrediction({
+      match,
+      teamA,
+      teamB,
+      performanceA,
+      performanceB,
+      headToHead: directHistory,
+    })
+    const predicted = predictedOutcome(prediction)
+    const actual = actualOutcome(match)
+
+    if (!actual) continue
+    if (predicted === 'undecided') {
+      undecided += 1
+    } else if (predicted === actual) {
+      correct += 1
+    } else {
+      wrong += 1
+    }
+  }
+
+  const evaluated = correct + wrong
+
+  return {
+    correct,
+    wrong,
+    undecided,
+    evaluated,
+    correctRate: evaluated ? Math.round((correct / evaluated) * 100) : 0,
+    wrongRate: evaluated ? Math.round((wrong / evaluated) * 100) : 0,
+  }
+})
 
 const lastUpdatedLabel = computed(() => {
   if (!matchStore.lastUpdatedAt) return 'Mise à jour en attente'
@@ -68,6 +153,42 @@ const filteredMatches = computed(() => {
         </p>
         <p v-if="matchStore.refreshError" class="mt-1 text-rose-700">
           {{ matchStore.refreshError }}
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="grid gap-3 rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:grid-cols-3"
+      aria-label="Fiabilité des pronostics"
+    >
+      <div>
+        <p class="text-sm font-semibold uppercase text-slate-500">Pronostics justes</p>
+        <p class="mt-1 text-3xl font-bold text-emerald-700">
+          {{ predictionAccuracy.correctRate }}%
+        </p>
+        <p class="text-sm text-slate-500">
+          {{ predictionAccuracy.correct }} sur {{ predictionAccuracy.evaluated }} évalués
+        </p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold uppercase text-slate-500">Pronostics faux</p>
+        <p class="mt-1 text-3xl font-bold text-rose-700">
+          {{ predictionAccuracy.wrongRate }}%
+        </p>
+        <p class="text-sm text-slate-500">
+          {{ predictionAccuracy.wrong }} sur {{ predictionAccuracy.evaluated }} évalués
+        </p>
+      </div>
+      <div>
+        <p class="text-sm font-semibold uppercase text-slate-500">Matchs terminés</p>
+        <p class="mt-1 text-3xl font-bold text-slate-950">
+          {{ predictionAccuracy.evaluated + predictionAccuracy.undecided }}
+        </p>
+        <p class="text-sm text-slate-500">
+          <span v-if="predictionAccuracy.undecided">
+            {{ predictionAccuracy.undecided }} pronostic non tranché
+          </span>
+          <span v-else>Tous les pronostics sont tranchés</span>
         </p>
       </div>
     </section>

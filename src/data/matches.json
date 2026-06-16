@@ -168,15 +168,15 @@
     "teamBId": "japan",
     "stadium": "AT&T Stadium, Dallas",
     "group": "F",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
     "homeAdvantageTeamId": null,
     "result": {
       "teamAScore": 2,
       "teamBScore": 2,
       "winnerTeamId": null,
-      "source": "Mouhcine, 2026-06-14",
-      "updatedAt": "2026-06-14T22:58:18.000Z"
+      "source": "The Guardian, 2026-06-14",
+      "updatedAt": "2026-06-16T22:16:54.000Z"
     }
   },
   {
@@ -186,9 +186,16 @@
     "teamBId": "ecuador",
     "stadium": "Lincoln Financial Field, Philadelphia",
     "group": "E",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 0,
+      "winnerTeamId": "ivory-coast",
+      "source": "The Guardian, 2026-06-14",
+      "updatedAt": "2026-06-16T22:16:54.000Z"
+    }
   },
   {
     "id": "match-12-sweden-tunisia",
@@ -197,9 +204,16 @@
     "teamBId": "tunisia",
     "stadium": "Estadio BBVA, Monterrey",
     "group": "F",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 5,
+      "teamBScore": 1,
+      "winnerTeamId": "sweden",
+      "source": "The Guardian, 2026-06-15",
+      "updatedAt": "2026-06-16T22:16:54.000Z"
+    }
   },
   {
     "id": "match-13-spain-cape-verde",
@@ -208,9 +222,16 @@
     "teamBId": "cape-verde",
     "stadium": "Mercedes-Benz Stadium, Atlanta",
     "group": "H",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 0,
+      "teamBScore": 0,
+      "winnerTeamId": null,
+      "source": "The Guardian, 2026-06-15",
+      "updatedAt": "2026-06-16T22:16:54.000Z"
+    }
   },
   {
     "id": "match-14-belgium-egypt",
@@ -219,9 +240,16 @@
     "teamBId": "egypt",
     "stadium": "Lumen Field, Seattle",
     "group": "G",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 1,
+      "winnerTeamId": null,
+      "source": "The Guardian, 2026-06-16",
+      "updatedAt": "2026-06-16T22:16:54.000Z"
+    }
   },
   {
     "id": "match-15-saudi-arabia-uruguay",
@@ -230,9 +258,16 @@
     "teamBId": "uruguay",
     "stadium": "Hard Rock Stadium, Miami",
     "group": "H",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 1,
+      "winnerTeamId": null,
+      "source": "The Guardian, 2026-06-15",
+      "updatedAt": "2026-06-16T22:16:54.000Z"
+    }
   },
   {
     "id": "match-16-iran-new-zealand",
@@ -241,9 +276,16 @@
     "teamBId": "new-zealand",
     "stadium": "SoFi Stadium, Los Angeles",
     "group": "G",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 2,
+      "teamBScore": 2,
+      "winnerTeamId": null,
+      "source": "The Guardian, 2026-06-16",
+      "updatedAt": "2026-06-16T22:16:54.000Z"
+    }
   },
   {
     "id": "match-17-france-senegal",
@@ -252,9 +294,16 @@
     "teamBId": "senegal",
     "stadium": "MetLife Stadium, New York/New Jersey",
     "group": "I",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 3,
+      "teamBScore": 1,
+      "winnerTeamId": "france",
+      "source": "The Guardian, 2026-06-16",
+      "updatedAt": "2026-06-16T22:16:54.000Z"
+    }
   },
   {
     "id": "match-18-iraq-norway",
