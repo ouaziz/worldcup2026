@@ -312,9 +312,16 @@
     "teamBId": "norway",
     "stadium": "Gillette Stadium, Boston",
     "group": "I",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 4,
+      "winnerTeamId": "norway",
+      "source": "The Guardian, 2026-06-16",
+      "updatedAt": "2026-06-17T00:03:15.000Z"
+    }
   },
   {
     "id": "match-19-argentina-algeria",
