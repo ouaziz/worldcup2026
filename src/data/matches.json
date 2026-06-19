@@ -330,9 +330,16 @@
     "teamBId": "algeria",
     "stadium": "Arrowhead Stadium, Kansas City",
     "group": "J",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 3,
+      "teamBScore": 0,
+      "winnerTeamId": "argentina",
+      "source": "SB Nation, 2026-06-19",
+      "updatedAt": "2026-06-19T21:04:32.000Z"
+    }
   },
   {
     "id": "match-20-austria-jordan",
@@ -341,9 +348,16 @@
     "teamBId": "jordan",
     "stadium": "Levi’s Stadium, San Francisco Bay Area",
     "group": "J",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 3,
+      "teamBScore": 1,
+      "winnerTeamId": "austria",
+      "source": "SB Nation, 2026-06-19",
+      "updatedAt": "2026-06-19T21:04:32.000Z"
+    }
   },
   {
     "id": "match-21-portugal-dr-congo",
@@ -352,9 +366,16 @@
     "teamBId": "dr-congo",
     "stadium": "NRG Stadium, Houston",
     "group": "K",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 1,
+      "winnerTeamId": null,
+      "source": "SB Nation, 2026-06-19",
+      "updatedAt": "2026-06-19T21:04:32.000Z"
+    }
   },
   {
     "id": "match-22-england-croatia",
@@ -363,9 +384,16 @@
     "teamBId": "croatia",
     "stadium": "AT&T Stadium, Dallas",
     "group": "L",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 4,
+      "teamBScore": 2,
+      "winnerTeamId": "england",
+      "source": "SB Nation, 2026-06-19",
+      "updatedAt": "2026-06-19T21:04:32.000Z"
+    }
   },
   {
     "id": "match-23-ghana-panama",
@@ -374,9 +402,16 @@
     "teamBId": "panama",
     "stadium": "BMO Field, Toronto",
     "group": "L",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 0,
+      "winnerTeamId": "ghana",
+      "source": "SB Nation, 2026-06-19",
+      "updatedAt": "2026-06-19T21:04:32.000Z"
+    }
   },
   {
     "id": "match-24-uzbekistan-colombia",
@@ -385,9 +420,16 @@
     "teamBId": "colombia",
     "stadium": "Estadio Azteca, Mexico City",
     "group": "K",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.72,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 3,
+      "winnerTeamId": "colombia",
+      "source": "SB Nation, 2026-06-19",
+      "updatedAt": "2026-06-19T21:04:32.000Z"
+    }
   },
   {
     "id": "match-25-czech-republic-south-africa",
@@ -396,9 +438,16 @@
     "teamBId": "south-africa",
     "stadium": "Mercedes-Benz Stadium, Atlanta",
     "group": "A",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.8,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 1,
+      "winnerTeamId": null,
+      "source": "SB Nation, 2026-06-19",
+      "updatedAt": "2026-06-19T21:04:32.000Z"
+    }
   },
   {
     "id": "match-26-switzerland-bosnia",
@@ -407,9 +456,16 @@
     "teamBId": "bosnia",
     "stadium": "SoFi Stadium, Los Angeles",
     "group": "B",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.8,
-    "homeAdvantageTeamId": null
+    "homeAdvantageTeamId": null,
+    "result": {
+      "teamAScore": 4,
+      "teamBScore": 1,
+      "winnerTeamId": "switzerland",
+      "source": "SB Nation, 2026-06-19",
+      "updatedAt": "2026-06-19T21:04:32.000Z"
+    }
   },
   {
     "id": "match-27-canada-qatar",
@@ -418,9 +474,16 @@
     "teamBId": "qatar",
     "stadium": "BC Place, Vancouver",
     "group": "B",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.8,
-    "homeAdvantageTeamId": "canada"
+    "homeAdvantageTeamId": "canada",
+    "result": {
+      "teamAScore": 6,
+      "teamBScore": 0,
+      "winnerTeamId": "canada",
+      "source": "SB Nation, 2026-06-19",
+      "updatedAt": "2026-06-19T21:04:32.000Z"
+    }
   },
   {
     "id": "match-28-mexico-south-korea",
@@ -429,9 +492,16 @@
     "teamBId": "south-korea",
     "stadium": "Estadio Akron, Guadalajara",
     "group": "A",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.8,
-    "homeAdvantageTeamId": "mexico"
+    "homeAdvantageTeamId": "mexico",
+    "result": {
+      "teamAScore": 1,
+      "teamBScore": 0,
+      "winnerTeamId": "mexico",
+      "source": "SB Nation, 2026-06-19",
+      "updatedAt": "2026-06-19T21:04:32.000Z"
+    }
   },
   {
     "id": "match-29-usa-australia",
@@ -440,9 +510,16 @@
     "teamBId": "australia",
     "stadium": "Lumen Field, Seattle",
     "group": "D",
-    "status": "scheduled",
+    "status": "completed",
     "importance": 0.8,
-    "homeAdvantageTeamId": "usa"
+    "homeAdvantageTeamId": "usa",
+    "result": {
+      "teamAScore": 2,
+      "teamBScore": 0,
+      "winnerTeamId": "usa",
+      "source": "SB Nation, 2026-06-19",
+      "updatedAt": "2026-06-19T21:04:32.000Z"
+    }
   },
   {
     "id": "match-30-scotland-morocco",
